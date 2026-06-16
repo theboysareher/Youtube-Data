@@ -4,7 +4,7 @@
 title = YoutubeData
 
 # (str) Package name
-package.name = Youtube Data
+package.name = YoutubeData
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = com.YouData.app
@@ -100,7 +100,7 @@ android.permissions = INTERNET
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 33
+android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
 android.minapi = 21
@@ -109,7 +109,7 @@ android.minapi = 21
 android.sdk = 33
 
 # (str) Android NDK version to use
-#android.ndk = 25b
+android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
