@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Youtube Data
+title = YoutubeData
 
 # (str) Package name
 package.name = Youtube Data
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd==1.1.1,yt_dlp,uuid
+requirements = python3,kivy,kivymd==1.1.1,yt_dlp
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -100,7 +100,7 @@ android.permissions = INTERNET
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 31
+#android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
 android.minapi = 21
@@ -109,7 +109,7 @@ android.minapi = 21
 android.sdk = 33
 
 # (str) Android NDK version to use
-#android.ndk = 23b
+#android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
