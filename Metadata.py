@@ -2,6 +2,7 @@ from yt_dlp import YoutubeDL
 import json
 from uuid import uuid4
 from threading import Thread,Event
+import traceback
 
 class Youtube():
     def __init__(self):
