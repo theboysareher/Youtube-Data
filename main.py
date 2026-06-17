@@ -1,10 +1,20 @@
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
+from kivy.uix.screenmanager import ScreenManager
 
+class App(MDApp):
 
-class Test(MDApp):
     def build(self):
-        return MDLabel(text="Hello Android 15")
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Green"
+        self.theme_cls.material_style = "M3"
+
+        screen_manager = ScreenManager()
+        screen_manager.add_widget(
+            Builder.load_file("Kv_ui/user_application.kv")
+        )
+
+        return screen_manager
 
 
-Test().run()
+if __name__ == "__main__":
+    App().run()
