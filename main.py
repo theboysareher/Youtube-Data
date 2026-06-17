@@ -4,12 +4,12 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 from kivy.clock import Clock
 from kivymd.app import MDApp
-from Metadata import Youtube
+#from Metadata import Youtube
 
 class App(MDApp):
 
     def build(self):
-        self.yt = Youtube()
+        #self.yt = Youtube()
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
         self.theme_cls.material_style = "M3"
