@@ -3,6 +3,12 @@ import json
 from uuid import uuid4
 from threading import Thread,Event
 import traceback
+import ssl
+import certifi
+
+ssl._create_default_https_context = lambda: ssl.create_default_context(
+    cafile=certifi.where()
+)
 
 class Youtube():
     def __init__(self):
@@ -18,7 +24,7 @@ class Youtube():
         Thread(target=self._save).start()
            
     def _get(self,url:str,callback) -> str:
-       options = {"skip_download": True,"quiet":True,"no_warnings": True}    
+       options = {"skip_download": True,"quiet":True,"no_warnings": True,"nocheckcertificate": False}    
        with YoutubeDL(options) as ydl:
            try:
              info = ydl.extract_info(url, download=False)
