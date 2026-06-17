@@ -24,7 +24,7 @@ class Youtube():
         Thread(target=self._save).start()
            
     def _get(self,url:str,callback) -> str:
-       options = {"skip_download": True,"quiet":True,"no_warnings": True,"nocheckcertificate": False}    
+       options = {"skip_download": True,"quiet":True,"no_warnings": True,"nocheckcertificate": True}    
        with YoutubeDL(options) as ydl:
            try:
              info = ydl.extract_info(url, download=False)
