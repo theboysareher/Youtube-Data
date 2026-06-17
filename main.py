@@ -14,12 +14,14 @@ class App(MDApp):
         self.theme_cls.primary_palette = "Green"
         self.theme_cls.material_style = "M3"
 
-        screen_manager = ScreenManager()
-        screen_manager.add_widget(
+        #screen_manager = ScreenManager()
+        #screen_manager.add_widget(
             Builder.load_file("Kv_ui/user_application.kv")
         )
-
-        return screen_manager
+        from kivymd.uix.label import
+MDLabel
+        return MDLabel(text="TEST")
+  
 
     def downloader(self,url):
          self.yt.get_metadata(url, self.on_result)
