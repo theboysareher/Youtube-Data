@@ -40,14 +40,16 @@ class Youtube():
              self.data = data
              callback(data)
              self.event.set()                   
-           except Exception as e: print(e);self.event.set()
+           except Exception as e: traceback.print_exc();self.event.set()
            
            
     def _save(self) -> None:
         try:
            with open(f"{self.data['uploader']}-{uuid4().hex[:5]}.json","w") as f:
                json.dump(self.data,f,indent=4)
-        except Exception as e :quit()
+        except Exception as e :
+           traceback.print_exc()
+           quit()
            
               
       
