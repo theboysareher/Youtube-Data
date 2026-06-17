@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = YoutubeData
+title = Youtube Data
 
 # (str) Package name
 package.name = YoutubeData
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd==1.1.1,yt_dlp
+requirements = python3,kivy,kivymd==1.1.1,yt_dlp,certifi
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
