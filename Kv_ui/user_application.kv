@@ -33,3 +33,12 @@ MDScreen:
                 disabled: False
                 on_release:
                     app.Save_data()
+                    
+            MDRectangleFlatIconButton:
+                text: "Extract Data"
+                icon: "magnify"
+                line_color: 2, 3, 4, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.83}
+                on_release:                 
+                    app.downloader(url_field.text)
+                    app.clear_field(url_field)
