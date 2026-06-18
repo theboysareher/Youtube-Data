@@ -25,7 +25,11 @@ MDScreen:
                 required: True 
                 pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
                            
-            
+            MDRaisedButton:
+                text: "Save Metadata"
+                md_bg_color: "cyan"
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+                
             MDRectangleFlatIconButton:
                 text: "Extract Data"
                 icon: "magnify"
@@ -35,10 +39,7 @@ MDScreen:
                     app.downloader(url_field.text)
                     app.clear_field(url_field)
                            
-             MDRaisedButton:
-                text:"Save Metadata"
-                pos_hint: {"center_x": 0.5, "center_y": 0.2}
-
+                                          
             MDBoxLayout:
                 radius: [95,95,95,95]
                 pos_hint: {"center_x": 0.5, "center_y": 0.39}
@@ -104,4 +105,8 @@ MDScreen:
                  
                                     
                                                                                          
-    
+    MDTopAppBar:
+        title: "Youtube Metadata Extractor"
+        specific_text_color: "#4a4939"
+        pos_hint: {"top": 1.01}
+        md_bg_color: (14/255,19/255,40/255,0.5)
