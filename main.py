@@ -13,7 +13,7 @@ class App(MDApp):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
         self.theme_cls.material_style = "M3"
-        
+        self.yt = Youtube()
         return MDLabel(text="TEST")
   
 
