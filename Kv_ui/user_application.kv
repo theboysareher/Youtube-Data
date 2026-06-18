@@ -16,3 +16,11 @@ MDScreen:
         md_bg_color: (0/255,0/255,0/255,0.4)
         size_hint: 0.999, 0.93
         opacity: 1
+        
+        FloatLayout:
+            
+            MDTextField:
+                id: url_field
+                icon_left: "link-plus"
+                required: True 
+                pos_hint: {"center_x": 0.5, "center_y": 0.92}
