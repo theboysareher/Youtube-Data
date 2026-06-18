@@ -69,7 +69,9 @@ class Youtube():
             print("Exporting:", path)
             print("Filename:", name)
             storage = SharedStorage()
-            storage.copy_to_shared(path,filepath=name)
+            print("RESULT:", storage)
+            storage.copy_to_shared(path,filepath=name)            
+            print("Export completed")   
            except Exception:
              traceback.print_exc()
            
