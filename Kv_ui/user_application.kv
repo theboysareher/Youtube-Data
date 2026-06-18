@@ -5,5 +5,14 @@ MDScreen:
         allow_stretch: True
         keep_ratio: False   
         size_hint: 1, 1    
-        pos_hint:{"center_x":0.5,"center_y":0.5}
-          
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        
+    MDBoxLayout:    
+        id: container             
+        pos_hint: {"center_x": 0.5, "center_y": 0.45}
+        padding : '10dp'
+        spacing : '5dp'
+        orientation: "vertical"
+        md_bg_color: (0/255,0/255,0/255,0.4)
+        size_hint: 0.999, 0.93
+        opacity: 1
