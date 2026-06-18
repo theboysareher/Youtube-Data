@@ -60,11 +60,14 @@ class Youtube():
            self.export_metadata(path_a,name)
         except Exception as e :
            traceback.print_exc()
-           quit()
+           
            
     def export_metadata(self,path,name):
-           storage = SharedStorage()
-           storage.copy_to_shared(path,filepath=name)
+           try:
+            storage = SharedStorage()
+            storage.copy_to_shared(path,filepath=name)
+           except Exception as e:
+            print(e)
            
       
 
