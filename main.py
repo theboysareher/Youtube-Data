@@ -21,6 +21,8 @@ class App(MDApp):
         return screen_manager
 
   
+    def on_start(self):
+        self.app_folder = self.user_data_dir
 
     def downloader(self,url):
          self.yt.get_metadata(url, self.on_result)
@@ -43,10 +45,10 @@ class App(MDApp):
         ids.channel_follower_count.text = (f"[+] channel_follower_count: {data.get('channel_follower_count', '')}")
 
     def Save_data(self):
-       self.yt.save_metadata()
+       self.yt.save_metadata(self.app_folder)
        dialog = MDDialog(
              title="Debug",
-             text="Saved results to file Successfully !",
+             text=self.app_folder,
              radius=[60,60,60,60],
              buttons =
              [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
