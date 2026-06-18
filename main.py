@@ -4,7 +4,7 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 from kivy.clock import Clock
 from kivymd.app import MDApp
-from android.permission import request_permission,Permission
+from android.permissions import request_permission,Permission
 from Metadata import Youtube
 
 
