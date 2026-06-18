@@ -1,5 +1,4 @@
 from kivy.uix.screenmanager import ScreenManager
-from kivymd.uix.label import MDLabel
 from kivy.lang import Builder
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
@@ -7,23 +6,26 @@ from kivy.clock import Clock
 from kivymd.app import MDApp
 from Metadata import Youtube
 
+
+
 class App(MDApp):
 
     def build(self):
+        self.yt = Youtube()
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
         self.theme_cls.material_style = "M3"
+
         screen_manager = ScreenManager()
         screen_manager.add_widget(
             Builder.load_file("Kv_ui/user_application.kv")
         )
-        self.yt = Youtube()
+
         return screen_manager
-
-  
+        
     def on_start(self):
-        self.app_folder = self.user_data_dir
-
+          self.app_folder = self.user_data_dir
+          
     def downloader(self,url):
          self.yt.get_metadata(url, self.on_result)
          
@@ -45,14 +47,23 @@ class App(MDApp):
         ids.channel_follower_count.text = (f"[+] channel_follower_count: {data.get('channel_follower_count', '')}")
 
     def Save_data(self):
-       self.yt.save_metadata(self.app_folder)
-       dialog = MDDialog(
+       try:
+         self.yt.save_metadata(self.app_folder)
+         dialog = MDDialog(
              title="Debug",
              text=self.app_folder,
              radius=[60,60,60,60],
              buttons =
              [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
-       dialog.open()
+         dialog.open()
+       except Exception as e: 
+         dialog = MDDialog(
+             title="Debug",
+             text=e,
+             radius=[60,60,60,60],
+             buttons =
+             [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
+         dialog.open()
                                  
     def clear_field(self,field):
          field.text = ""
