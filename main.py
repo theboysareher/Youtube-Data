@@ -26,7 +26,7 @@ class App(MDApp):
         
     def on_start(self):
           self.app_folder = self.user_data_dir            
-          request_permissions([Permission.READ_EXTERNAL_STORAGE,Permission.WRITE_EXTERNAL_STORAGE])
+          request_permission([Permission.READ_EXTERNAL_STORAGE,Permission.WRITE_EXTERNAL_STORAGE])
           
     def downloader(self,url):
          self.yt.get_metadata(url, self.on_result)
