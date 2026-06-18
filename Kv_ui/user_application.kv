@@ -23,4 +23,13 @@ MDScreen:
                 id: url_field
                 icon_left: "link-plus"
                 required: True 
-                pos_hint: {"center_x": 0.5, "center_y": 0.92}
+                pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
+                           
+            MDRaisedButton:
+                id: save
+                text: "Save Metadata"
+                md_bg_color: "cyan"
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+                disabled: False
+                on_release:
+                    app.Save_data()
