@@ -25,7 +25,7 @@ MDScreen:
                 required: True 
                 pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
                            
-            
+                    
             MDRectangleFlatIconButton:
                 text: "Extract Data"
                 icon: "magnify"
@@ -36,4 +36,65 @@ MDScreen:
                     app.clear_field(url_field)
                            
                                           
-            
+            MDBoxLayout:
+                radius: [95,95,95,95]
+                pos_hint: {"center_x": 0.5, "center_y": 0.39}
+                md_bg_color: (0/255,0/255,0/255,0.6)
+                size_hint: 0.99, 0.75
+                
+                FloatLayout:
+                    
+                    MDLabel:
+                        id: channel_name
+                        text_color: 0, 0, 0, 1
+                        text: "[+] channel_name:"
+                        pos_hint: {"x": .1, "y": 0.410}
+                        
+                    MDLabel:
+                        id: uploader
+                        text_color: 0, 0, 0, 1
+                        text: "[+] uploader:"
+                        pos_hint: {"x": .1, "y": 0.350}
+                        
+                    MDLabel:
+                        id: channel_is_verified
+                        text_color: 0, 0, 0, 1
+                        text: "[+] channel_is_verified: "
+                        pos_hint: {"x": .1, "y": 0.290}
+                        
+                    MDLabel:
+                        id: viecount
+                        text_color: 0, 0, 0, 1
+                        text: "[+] viecount:"
+                        pos_hint: {"x": .1, "y": 0.230}
+                        
+                    MDLabel:
+                        id: likes
+                        text_color: 0, 0, 0, 1
+                        text: "[+] likes:"
+                        pos_hint: {"x": .1, "y": 0.170}
+                        
+                    MDLabel:
+                        id: duration
+                        text_color: 0, 0, 0, 1
+                        text: "[+] duration:"
+                        pos_hint: {"x": .1, "y": 0.115}
+                        
+                    MDLabel:
+                        id: display_id
+                        text_color: 0, 0, 0, 1
+                        text: "[+] display_id:"
+                        pos_hint: {"x": .1, "y": 0.98}
+                        
+                    MDLabel:
+                        id: upload_date
+                        text_color: 0, 0, 0, 1
+                        text: "[+] upload_date:"
+                        pos_hint: {"x": .1, "y": 0.060}
+                        
+                    MDLabel:
+                        id: channel_follower_count
+                        text_color: 0, 0, 0, 1
+                        text: "[+] channel_follower_count:"
+                        pos_hint: {"x": .1 ,"y": 0.010}
+                                         
