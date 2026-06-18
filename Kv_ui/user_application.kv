@@ -25,15 +25,7 @@ MDScreen:
                 required: True 
                 pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
                            
-            MDRaisedButton:
-                id: save
-                text: "Save Metadata"
-                md_bg_color: "cyan"
-                pos_hint: {"center_x": 0.5, "center_y": 0.2}
-                disabled: False
-                on_release:
-                    app.Save_data()
-                    
+            
             MDRectangleFlatIconButton:
                 text: "Extract Data"
                 icon: "magnify"
