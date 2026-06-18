@@ -17,7 +17,7 @@ class App(MDApp):
         screen_manager.add_widget(
             Builder.load_file("Kv_ui/user_application.kv")
         )
-
+        self.yt = Youtube()
         return screen_manager
 
   
