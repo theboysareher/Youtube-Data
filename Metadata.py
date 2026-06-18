@@ -49,7 +49,7 @@ class Youtube():
              self.data = data
              callback(data)
              self.event.set()                   
-           except Exception as e: traceback.print_exc();self.event.set()
+           except Exception: traceback.print_exc();self.event.set()
            
            
     def _save(self,path_a) -> None:
@@ -57,17 +57,21 @@ class Youtube():
            name = f"{self.data['uploader']}-{uuid4().hex[:5]}.json"
            path = os.path.join(path_a,name)
            with open(path,"w") as f:  json.dump(self.data,f,indent=4)
+           print("JSON created at:", path)
+           print("Now exporting...")
            self.export_metadata(path,name)
-        except Exception as e :
+        except Exception:
            traceback.print_exc()
            
            
     def export_metadata(self,path,name):
            try:
+            print("Exporting:", path)
+            print("Filename:", name)
             storage = SharedStorage()
             storage.copy_to_shared(path,filepath=name)
-           except Exception as e:
-            print(e)
+           except Exception:
+             traceback.print_exc()
            
       
 
