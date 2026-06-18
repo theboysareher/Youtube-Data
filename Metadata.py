@@ -57,7 +57,7 @@ class Youtube():
            name = f"{self.data['uploader']}-{uuid4().hex[:5]}.json"
            path = os.path.join(path_a,name)
            with open(path,"w") as f:  json.dump(self.data,f,indent=4)
-           self.export_metadata(path_a,name)
+           self.export_metadata(path,name)
         except Exception as e :
            traceback.print_exc()
            
