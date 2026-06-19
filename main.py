@@ -1,7 +1,5 @@
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFlatButton
 from kivy.clock import Clock
 from kivymd.app import MDApp
 from android.permissions import request_permissions,Permission
@@ -25,12 +23,11 @@ class App(MDApp):
         return screen_manager
         
     def on_start(self):
-          self.app_folder = self.user_data_dir            
-          request_permissions([Permission.READ_EXTERNAL_STORAGE,Permission.WRITE_EXTERNAL_STORAGE])
+          self.app_folder = self.user_data_dir
           
     def downloader(self,url):
          self.yt.get_metadata(url, self.on_result)
-         
+         request_permissions([Permission.READ_EXTERNAL_STORAGE,Permission.WRITE_EXTERNAL_STORAGE])
     def on_result(self, data):
      Clock.schedule_once(lambda dt: self.Data(data))
      
@@ -47,8 +44,11 @@ class App(MDApp):
         ids.display_id.text = f"[+] display_id: {data.get('display_id', '')}"
         ids.upload_date.text = f"[+] upload_date: {data.get('upload_date', '')}"
         ids.channel_follower_count.text = (f"[+] channel_follower_count: {data.get('channel_follower_count', '')}")
-        
-    
+
+    def Save_data(self):
+         self.yt.save_metadata(self.app_folder)
+       
+                                 
     def clear_field(self,field):
          field.text = ""
          
