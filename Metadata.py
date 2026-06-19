@@ -5,6 +5,8 @@ from threading import Thread,Event
 import traceback
 import ssl
 import certifi
+import os
+from androidstorage4kivy import SharedStorage
 
 ssl._create_default_https_context = lambda: ssl.create_default_context(
     cafile=certifi.where()
@@ -18,6 +20,10 @@ class Youtube():
     def get_metadata(self,url:str,callback):
         self.thread = Thread(target=self._get,args=(url,callback))
         self.thread.start()
+        
+    def save_metadata(self,path):
+        self.event.wait()
+        Thread(target=self._save,args=(path,)).start()
            
     def _get(self,url:str,callback) -> str:
        options = {"skip_download": True,"quiet":True,"no_warnings": True,"nocheckcertificate": True}    
@@ -43,5 +49,24 @@ class Youtube():
              self.data = data
              callback(data)
              self.event.set()                   
-           except Exception: traceback.print_exc();self.event.set()
+           except Exception as e: traceback.print_exc();self.event.set()
            
+           
+    def _save(self,path_a) -> None:
+        try:
+           name = f"{self.data['uploader']}-{uuid4().hex[:5]}.json"
+           path = os.path.join(path_a,name)
+           with open(path,"w") as f:  json.dump(self.data,f,indent=4)
+           print(path)
+           print(name)
+           self.export_metadata(path,name)
+           print("send")
+        except Exception as e :
+           traceback.print_exc()
+           
+    def export_metadata(self,path,name):
+           storage = SharedStorage()
+           print(path)
+           print(name)
+           storage.copy_to_shared(path,filepath=name)
+           print( storage.copy_to_shared(path,filepath=name))
