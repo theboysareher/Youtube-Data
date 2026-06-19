@@ -47,26 +47,9 @@ class App(MDApp):
         ids.display_id.text = f"[+] display_id: {data.get('display_id', '')}"
         ids.upload_date.text = f"[+] upload_date: {data.get('upload_date', '')}"
         ids.channel_follower_count.text = (f"[+] channel_follower_count: {data.get('channel_follower_count', '')}")
-
-    def Save_data(self):
-       try:
-         self.yt.save_metadata(self.app_folder)
-         dialog = MDDialog(
-             title="Debug",
-             text=self.app_folder,
-             radius=[60,60,60,60],
-             buttons =
-             [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
-         dialog.open()
-       except Exception as e: 
-         dialog = MDDialog(
-             title="Debug",
-             text=e,
-             radius=[60,60,60,60],
-             buttons =
-             [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
-         dialog.open()
-                                 
+        dialog = MDDialog(title="Debug",text="Data Retrieved Successfully.",radius=[60,60,60,60],buttons = [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
+        dialog.open()
+    
     def clear_field(self,field):
          field.text = ""
          
