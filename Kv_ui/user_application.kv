@@ -22,7 +22,6 @@ MDScreen:
             MDTextField:
                 id: url_field
                 icon_left: "link-plus"
-                text: "https://youtu.be/8pH9WtK1cP4?si=9EMKQhSbWYeAtNbo"
                 required: True 
                 pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
                            
@@ -98,13 +97,7 @@ MDScreen:
                         text: "[+] channel_follower_count:"
                         pos_hint: {"x": .1 ,"y": 0.010}
                         
-            MDRectangleFlatIconButton:
-                text: "Save Metadata"
-                icon: "download"
-                line_color: 2, 3, 4, 1
-                pos_hint: {"center_x": 0.5, "center_y": 0.2}
-                on_release:
-                    app.Save_data()
+            
                 
                                     
                  
