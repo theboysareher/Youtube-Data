@@ -47,8 +47,7 @@ class App(MDApp):
         ids.display_id.text = f"[+] display_id: {data.get('display_id', '')}"
         ids.upload_date.text = f"[+] upload_date: {data.get('upload_date', '')}"
         ids.channel_follower_count.text = (f"[+] channel_follower_count: {data.get('channel_follower_count', '')}")
-        dialog = MDDialog(title="Debug",text="Data Retrieved Successfully.",radius=[60,60,60,60],buttons = [MDFlatButton(text='Cancel',on_release= lambda x : dialog.dismiss())])           
-        dialog.open()
+        
     
     def clear_field(self,field):
          field.text = ""
