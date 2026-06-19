@@ -36,13 +36,8 @@ MDScreen:
                     app.clear_field(url_field)
                            
              
-            MDRectangleFlatIconButton:
-                text: "Save Data"
-                icon: "download"
-                line_color: 2, 3, 4, 1
-                pos_hint: {"center_x": 0.5, "center_y": 0.2}
-                on_release:
-                    app.Save_data()
+            
+                   
                                          
             MDBoxLayout:
                 radius: [95,95,95,95]
@@ -105,3 +100,11 @@ MDScreen:
                         text_color: 0, 0, 0, 1
                         text: "[+] channel_follower_count:"
                         pos_hint: {"x": .1 ,"y": 0.010}
+                        
+            MDRectangleFlatIconButton:
+                text: "Save Data"
+                icon: "download"
+                line_color: 2, 3, 4, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+                on_release:
+                    app.Save_data()
