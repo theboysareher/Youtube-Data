@@ -22,6 +22,7 @@ MDScreen:
             MDTextField:
                 id: url_field
                 icon_left: "link-plus"
+                text:"jdjejeje"
                 required: True 
                 pos_hint: {"center_x": 0.5, "center_y": 0.92}                               
                            
@@ -34,13 +35,21 @@ MDScreen:
                     app.downloader(url_field.text)
                     app.clear_field(url_field)
                            
-                                          
+             
+            MDRectangleFlatIconButton:
+                text: "Save Data"
+                icon: "download"
+                line_color: 2, 3, 4, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+                on_release:
+                    app.Save_data()
+                                         
             MDBoxLayout:
                 radius: [95,95,95,95]
                 pos_hint: {"center_x": 0.5, "center_y": 0.39}
                 md_bg_color: (0/255,0/255,0/255,0.6)
                 size_hint: 0.99, 0.75
-                
+            
                 FloatLayout:
                     
                     MDLabel:
@@ -96,9 +105,3 @@ MDScreen:
                         text_color: 0, 0, 0, 1
                         text: "[+] channel_follower_count:"
                         pos_hint: {"x": .1 ,"y": 0.010}
-                        
-            
-                
-                                    
-                 
-                
